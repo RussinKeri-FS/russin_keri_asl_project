@@ -1,23 +1,20 @@
-const express = require('express');
+const express = require("express");
 const app = express();
 
-app.get('/', (req, res) => {
-    res.send(`ASL Project! Keri Russin`);
+// GET /products/8719-small-red HTTP/1.1
+app.get("/", (req, res) => {
+    res.send("ASL Project! Keri Russin");
 });
 
-app.get('/products/all', (req, res) => {
-    JSON.stringify(req.query) === '{}'
-    ? res.send(`Products, ${req.headers.page}, ${req.headers.sort}, ${req.headers.order}`)
-    : req.send(`Products, ${req.query.sort}`);
-});
+// GET /products/8719 HTTP/1.1
+app.get("/products/:productId", (req, res) => {
+    res.send('Product: ' + req.params.productId);
+    });
 
-app.get('/products/:id-:color', (req, res) => {
-    res.send(`Product, ${req.params.id}, ${req.params.size}, ${require.params.color}`);
-});
-
-app.get('/products/:id', (req,res) => {
-    res.send(`Product, ${req.params.id}`);
+// GET /products/all?sort=price HTTP/1.1
+app.get("/products/:productId-:productSize-:productColor", (req, res) => {
+    res.send('Product: ' + req.params.productId + req.params.productSize + req.params.productColor);
 });
 
 
-app.listen(3001)
+app.listen(3000);
