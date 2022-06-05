@@ -7,13 +7,13 @@ app.get('/', (req, res) => {
 });
 
 // GET /products/8719 HTTP/1.1
-app.get('/products/:productId', (req, res) => {
+app.get('/products/:id', (req, res) => {
     res.send('Product: ' + req.params.productId);
     });
 
 // GET /products/all?sort=price HTTP/1.1
-app.get('/products/:productId-:productSize-:productColor', (req, res) => {
-    res.send('Product: ' + req.params.productId + req.params.productSize + req.params.productColor);
+app.get('/products/:id-:size-:color', (req, res) => {
+    res.send('Product: ' + req.params.id + req.params.size + req.params.color);
 });
 
 
