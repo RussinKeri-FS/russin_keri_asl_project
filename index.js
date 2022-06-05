@@ -2,8 +2,14 @@ const express = require("express");
 const app = express();
 
 // GET /products/all HTTP/1.1
-app.get('/', (req, res) => {
-    res.send('ASL Project! Keri Russin');
+app.get('/products/all', (req, res) => {
+    JSON.stringify(req.query) === '{}'
+    ? res.send(
+        `Products, ${req.headers.page}, ${req.headers.sort}, ${req.headers.order}`
+    )
+    : res.send(
+        `Products, ${req.query.sort}`
+    );
 });
 
 // GET /products/8719 HTTP/1.1
