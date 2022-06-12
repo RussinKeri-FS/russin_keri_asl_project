@@ -5,12 +5,6 @@ let products = [
     name: "Nike Shoe",
     price: 14.99,
   },
-  {
-    id: "2",
-    slug: "adidas-shoe",
-    name: "Adidas Shoe",
-    price: 16.99,
-  },
 ];
 
 const all = () => {
@@ -35,7 +29,7 @@ const update = (id, product) => {
 };
 
 const remove = (id) => {
-  products = products.filter((p) => p.id !== id);
+  products = products.filter(p => p.id !== id);
   return products;
 };
 
