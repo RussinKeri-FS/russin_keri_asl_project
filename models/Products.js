@@ -29,7 +29,7 @@ const update = (id, product) => {
 };
 
 const remove = (id) => {
-  products = products.filter(p => p.id !== id);
+  products = products.filter((p) => p.id !== id);
   return products;
 };
 
