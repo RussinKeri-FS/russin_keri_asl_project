@@ -16,7 +16,7 @@
 ---
 
 ## Week 3: Assignment:
-- 
+- assignments/sequelize-orm
 
 ---
 
