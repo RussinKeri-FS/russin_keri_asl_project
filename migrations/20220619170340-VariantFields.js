@@ -9,7 +9,7 @@ module.exports = {
      * await queryInterface.createTable('users', { id: Sequelize.INTEGER });
      */
 
-    await queryInterface.addColumn("Variants", "slug", {
+     await queryInterface.addColumn("Variants", "slug", {
       type: Sequelize.STRING,
     }),
       queryInterface.addColumn("Variants", "description", {
@@ -28,8 +28,8 @@ module.exports = {
      * await queryInterface.dropTable('users');
      */
 
-    await queryInterface.removeColumn("Variants", "slug"),
-      queryInterface.removeColumn("Variants", "description"),
-      queryInterface.removeColumn("Variants", "inventory");
+     await queryInterface.removeColumn("Variants", "slug"),
+     queryInterface.removeColumn("Variants", "description"),
+     queryInterface.removeColumn("Variants", "inventory");
   },
 };

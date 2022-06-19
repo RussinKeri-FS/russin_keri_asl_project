@@ -1,56 +1,29 @@
 {% extends "../../layouts/base.twig" %}
 
-{% block main_content %}
-    <h2>
-        About 
-        {{ product.title }}
-    </h2>
-    <ul style="list-style: none;">
-        <li>
-            <label>
-                ID: 
-            </label>
-            {{ product.id }}
-        </li>
-        <li>
-            <label>
-                Title: 
-            </label>
-            {{ product.title }}
-        </li>
-        <li>
-            <label>
-                URL Slug:
-            </label>
-            {{ product.slug }}
-        </li>
-        <li>
-            <label>
-                Price: 
-            </label>
-            $
-            {{ product.price }}
-        </li>
-        <li>
-            <label>
-                Is Published:
-            </label>
-            {{ product.is_published }}
-        </li>
-        <li>
-            <label>
-                Description:
-            </label>
-            {{ product.description }}
-        </li>
-    </ul>
-    <p>
-        <a href="/products/{{ product.id }}/edit">
-            Edit
-        </a>
-        | 
-        <a href="/products/{{ product.id }}/delete">
-            Delete
-        </a>
-    </p>
-{% endblock %}
+    {% block main_content %}
+        <h2>About {{product.title}}</h2>
+        <ul style="list-style: none;">
+            <li>
+                <label>ID: </label> {{product.id}}
+            </li>
+            <li>
+                <label>Title: </label> {{product.title}}
+            </li>
+            <li>
+                <label>URL Slug:</label> {{product.slug}}
+            </li>
+            <li>
+                <label>Price: </label> ${{product.price}}
+            </li>
+            <li>
+                <label>Is Published:</label> {{product.is_published}}
+            </li>
+            <li>
+                <label>Description:</label>
+                {{product.description}}
+            </li>
+        </ul>
+        <p>
+            <a href="/products/{{product.id}}/edit">Edit</a> | <a href="/products/{{product.id}}/delete">Delete</a>
+        </p>
+    {% endblock %}
