@@ -3,6 +3,7 @@ const { Product } = require("../models");
 const index = async (req, res) => {
   const products = await Product.findAll();
   res.render("products/index", { products });
+  //res.json(products);
 };
 
 const form = async (req, res) => {
@@ -12,16 +13,19 @@ const form = async (req, res) => {
   } else {
     res.render("products/create");
   }
+  //res.send("Product.form");
 };
 
 const show = async (req, res) => {
   const product = await Product.findByPk(req.params.id);
   res.render("products/show", { product });
+  //res.json(product);
 };
 
 const create = async (req, res) => {
   const product = await Product.create(req.body);
   res.redirect("/products/" + product.id);
+  //res.json(product);
 };
 
 const update = async (req, res) => {
@@ -29,11 +33,13 @@ const update = async (req, res) => {
     where: { id: req.params.id },
   });
   res.redirect("/products/" + req.params.id);
+  //res.json(product);
 };
 
 const remove = async (req, res) => {
   const products = await Product.destroy({ where: { id: req.params.id } });
   res.redirect("/products/");
+  //res.json(products);
 };
 
 module.exports = { index, form, show, create, update, remove };

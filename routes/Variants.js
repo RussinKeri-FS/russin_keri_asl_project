@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-const variantCtrl = require("../controllers/Variants");
+const variantCtrl = require('../controllers/Variants');
 
 // GET
 router.get("/", variantCtrl.index);

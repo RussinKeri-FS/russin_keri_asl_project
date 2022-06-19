@@ -14,9 +14,15 @@
         </li>
         <li>
             <label>
-                Name: 
+                Title: 
             </label>
             {{ product.title }}
+        </li>
+        <li>
+            <label>
+                URL Slug:
+            </label>
+            {{ product.slug }}
         </li>
         <li>
             <label>
@@ -24,6 +30,18 @@
             </label>
             $
             {{ product.price }}
+        </li>
+        <li>
+            <label>
+                Is Published:
+            </label>
+            {{ product.is_published }}
+        </li>
+        <li>
+            <label>
+                Description:
+            </label>
+            {{ product.description }}
         </li>
     </ul>
     <p>

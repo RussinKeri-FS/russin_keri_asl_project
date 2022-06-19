@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 
 const imageCtrl = require('../controllers/Images');
-const { uploadImage } = require('')
 
 // GET
 router.get("/", imageCtrl.index);
@@ -11,8 +10,8 @@ router.get("/:id", imageCtrl.show);
 router.get("/:id/edit", imageCtrl.form);
 
 // POST
-router.post("/", imageCtrl.create, uploadImage);
-router.post("/:id", imageCtrl.update, uploadImage);
+router.post("/", imageCtrl.create);
+router.post("/:id", imageCtrl.update);
 router.all("/:id/delete", imageCtrl.remove);
 
 // DELETE
