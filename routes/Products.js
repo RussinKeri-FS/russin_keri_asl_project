@@ -12,7 +12,7 @@ router.get('/:id/edit', productCtrl.form);
 // POST
 router.post('/', productCtrl.create);
 router.post('/:id', productCtrl.update);
-router.post('/:id/delete', productCtrl.remove);
+router.all('/:id/delete', productCtrl.remove);
 
 // DELETE
 router.delete('/:id', productCtrl.remove);
