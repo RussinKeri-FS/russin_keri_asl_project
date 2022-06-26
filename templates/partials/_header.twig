@@ -1,9 +1,18 @@
-<header>
-    <nav>
-        <ul>
-            <li><a href='/'>Home</a></li>
-            <li><a href='/'>About</a></li>
-            <li><a href='/'>Contact</a></li>
-        </ul>
-    </nav>
-</header>
+{% block stylesheets %}{{parent()}}{% endblock %}
+
+    <header>
+        <nav>
+            <div class="nav-link">
+                <a href="/">Home</a>
+            </div>
+            <div class="nav-link">
+                <a href="/products">Products</a>
+            </div>
+            <div class="nav-link">
+                <a href="/variants">Variants</a>
+            </div>
+            <div class="nav-link">
+                <a href="/images">Images</a>
+            </div>   
+        </nav>
+    </header>
