@@ -4,12 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ASL Project</title>
+    {% block stylesheets %}
+        <link rel="stylesheet" href="../../public/app.css" type="text/css">
+    {% endblock %}
+    <title>ASL Project | Tea Shop</title>
 </head>
 <body>
     {% include "../partials/_header.twig" %}
+
     {% block main_content %}
     {% endblock %}
+
     {% include "../partials/_footer.twig" %}
 </body>
 </html>
