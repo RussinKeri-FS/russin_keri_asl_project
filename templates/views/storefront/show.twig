@@ -1,0 +1,47 @@
+{% extends "../../layouts/base.twig" %}
+
+{% block stylesheets %}{{parent()}}{% endblock %}
+
+{% block title %}{{product.title}} - {{variant.title}}{% endblock %}
+
+{% block main_content %}
+    <main>
+        <div>
+            {% set defaultImg = variant.Images[0] %}
+            <div>
+                <img src="/public/images/{{defaultImg.id}}{{defaultImg.extension}}" alt="Photography" />
+            </div>
+            <div>
+                {% for image in variant.Images %}
+                    <a href="#"><img src="/public/images/{{image.id}}{{image.extension}}" alt=""></a>
+                {% endfor %}
+            </div>
+        </div>
+        <div>
+            <h3><a href="#">{{product.title}} - {{variant.title}}</a></h3>
+            <p>{{variant.description}}</p>
+            <h5>Types:</h5>
+            <p>
+                {% for option in product.Variants %}
+                    {% if option.id === variant.id %}
+                        {{option.title}}
+                    {% else %}
+                        <a href="/store/products/{{product.slug}}?v{{option.slug}}">{{option.title}}</a>
+                    {% endif %}
+                {% endfor %}
+            </p>
+            <p>Price: $<span>{{variant.price}}</span></p>
+            <p>In Stock: 
+                <span>
+                    {% if variant.inventory < 10 %}
+                        Low Stock 
+                    {% elseif variant.inventory < 5 %}
+                        Only a couple sessions left. Book Now!
+                    {% else %}
+                        In Stock
+                    {% endif %}
+                </span>
+            </p>
+        </div>
+    </main>
+{% endblock %}
